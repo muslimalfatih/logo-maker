@@ -5,12 +5,104 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-    <title>Maker</title>
+    <title>Logo Maker</title>
   </head>
-  <body>
-    <div id="app">
-      <h1 class="text-2xl font-semibold text-blue-900">Logo Maker</h1>
+
+  <body class="">
+    <div class="flex flex-row justify-center py-2 bg-[#333652]">
+      <p class="font-semibold text-2xl text-white">Logo Maker 🧑‍🎨</p>
     </div>
-    <script type="module" src="/main.js"></script>
+    <div class="flex flex-col">
+      <div class="mb-5 flex flex-col bg-gray-100 w-full items-center">
+        <p class="flex py-4 justify-center text-orange-500">
+          * The letters are draggable
+        </p>
+        <div class="mt-1 mb-10 relative">
+          <div class="flex bg-white justify-center -top-20 items-center text-5xl maker-container font-semibold rounded-2xl w-[400px] h-[120px] pb-6"></div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center items-center space-y-10 px-6 py-4">
+        <div class="flex flex-col mb-0 items-center">
+          <input
+            type="text"
+            placeholder="Maker"
+            id="inputName"
+            class="mb-5 border rounded-md p-2"
+          />
+          <div class="flex flex-row space-x-2">
+            <span>Size:</span>
+            <input type="range" id="inputRange" min="12" max="72" value="48" />
+            <span id="rangeValue">48px</span>
+          </div>
+        </div>
+        <div id="textColor" class="flex flex-row space-x-3">
+          <div
+            class="w-10 h-10 rounded-full cursor-pointer"
+            style="background: #333652"
+          ></div>
+          <div
+            class="w-10 h-10 rounded-full cursor-pointer"
+            style="background: #33658a"
+          ></div>
+          <div
+            class="w-10 h-10 rounded-full cursor-pointer"
+            style="background: #fad02c"
+          ></div>
+          <div
+            class="w-10 h-10 rounded-full cursor-pointer"
+            style="background: #f26419"
+          ></div>
+        </div>
+        <div class="flex">
+          <button
+            id="saveImage"
+            class="bg-blue-600 rounded-lg px-6 py-2 text-white"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="py-12 bg-black/[0.7] transition duration-150 ease-in-out z-[10000] absolute top-0 right-0 bottom-0 left-0 hidden"
+      id="modal"
+    >
+      <div role="alert" class="container mx-auto max-w-lg">
+        <div
+          class="relative pb-6 bg-white shadow-md border border-gray-100 rounded-lg"
+        >
+          <div>
+            <button
+              id="closeModal"
+              class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
+              aria-label="close modal"
+              role="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-x"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+          <div id="modalContent" class="flex justify-center py-10"></div>
+          <div class="text-center">
+            <p class="">Right click and choose save image</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

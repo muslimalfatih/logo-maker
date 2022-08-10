@@ -1,5 +1,5 @@
 # Logo Maker 🧑‍🎨
-Simple text logo maker. Every text can be dragged. You can also change size and color of the text before save it.
+Simple text [Logo Maker](https://vite-logo-maker.vercel.app/). Every text can be dragged. You can also change size and color of the text before save it.
 I'm using [Vite](https://vitejs.dev/) as bundler.
 
 ## Getting Started
